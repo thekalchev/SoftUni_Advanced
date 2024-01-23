@@ -1,11 +1,17 @@
-matrix = [[1, 2, 3], [4, 5, 6]]
-# flattened = [num for sublist in matrix for num in sublist]
-# print(flattened)
+row = int(input())
 
-flatten = []
+matrix = []
 
-for sublist in matrix:
-    for num in sublist:
-        flatten.append(num)
+for _ in range(row):
+    matrix.append([int(el) for el in input().split()])
 
-print(flatten)
+diagonal_sum = 0
+# for row_index in range(row):
+#     for col_index in range(row):
+#         if row_index == col_index:
+#             diagonal_sum += matrix[row_index][col_index]
+#
+
+for row_index in range(row):
+    diagonal_sum += matrix[row_index][row_index]
+print(diagonal_sum)
